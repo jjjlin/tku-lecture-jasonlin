@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <!-- Head -->
+    <head>
+      <title>Fake News</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='main01.css') }}">
+    </head>
+  <!-- body -->
+    <body class="is-preload" background="{{url_for('static', filename='images/3.png')}}">
+      <!-- Header -->
+        <header id="header">
+          <h1>Your news review:</h1>
+          <h2>Please enter your news description:</h2>
+        </header>
+
+        <div>
+          This movie review is <strong>{{ prediction }}</strong>
+       (probability: {{ probability }}%).
+        </div>
+      <br>
+      <br>
+
+      <div>
+        <!-- form -->    
+          <form action="/thanks" method="post">
+            <input type=submit value='Correct' name='feedback_button'>
+            <input type=submit value='Incorrect' name='feedback_button'>
+            <input type=hidden value='{{ prediction }}' name='prediction'>
+            <input type=hidden value='{{ content }}' name='review'>
+          </form>
+      </div>
+      
+      <br>
+      <div>
+        <form action="/">
+          <input type=submit value='Submit another review'>
+        </form>
+      </div>
+    </body>
+</html>

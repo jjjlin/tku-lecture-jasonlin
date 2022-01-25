@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <!-- Head -->
+    <head>
+      <title>Fake News</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='main01.css') }}">
+    </head>
+  <!-- body -->
+    <body class="is-preload" background="{{url_for('static', filename='images/3.png')}}">
+      <!-- Header -->
+        <header id="header">
+          <h1>Thank you for your feedback!</h1>
+        </header>
+
+        <div id='button'>
+          <form action="/">
+            <input type=submit value='Submit another review'>
+          </form>
+        </div>
+    </body>
+</html>

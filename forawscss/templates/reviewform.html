@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <!-- Head -->
+    <head>
+      <title>Fake News</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='main01.css') }}">
+    </head>
+  <!-- body -->
+    <body class="is-preload" background="{{url_for('static', filename='images/3.png')}}">
+      <!-- Header -->
+        <header id="header">
+          <h1>Fake News</h1>
+          <h2>Please enter your news description:</h2>
+        </header>
+      <!-- dl & dt -->
+        <dl>
+          <dt>
+            {% from "_formhelpers.html" import render_field %}
+          </dt>
+        </dl>
+      <!-- form -->
+        <form method=post action="/results">
+
+          <dl>
+            {{ render_field(form.moviereview, cols='30', rows='10') }}
+          </dl>
+
+          <div>
+            <br>
+            <input type=submit value='Submit review' name='submit_btn'>
+          </div>
+        </form>
+    </body>
+</html>
